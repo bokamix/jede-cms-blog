@@ -1,5 +1,5 @@
 ---
-templateKey: about-post
+templateKey: blog-post
 title: Michał to ciul
 date: 2019-09-26T10:05:43.911Z
 description: Taki tam description
