@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class AboutRoll extends React.Component {
+class ProductsRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
@@ -60,7 +60,7 @@ class AboutRoll extends React.Component {
   }
 }
 
-AboutRoll.propTypes = {
+ProductsRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -101,6 +101,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <AboutRoll data={data} count={count} />}
+    render={(data, count) => <ProductsRoll data={data} count={count} />}
   />
 )
