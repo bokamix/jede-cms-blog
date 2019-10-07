@@ -34,7 +34,7 @@ collections:
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Gallery", name: "gallery",  widget: "image", config: multiple: true}
+      - {label: "Gallery", name: "gallery",  widget: "image", config: [multiple: true]}
       - {label: "Tags", name: "tags", widget: "list"}
 
 
