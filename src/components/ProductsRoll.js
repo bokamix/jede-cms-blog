@@ -74,7 +74,7 @@ export default () => (
       query PostRollQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "about-post" } } }
+          filter: { frontmatter: { templateKey: { eq: "products-tamp" } } }
         ) {
           edges {
             node {

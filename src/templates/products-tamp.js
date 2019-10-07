@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import styled from 'styled-components'
 
-export const AboutPostTemplate = ({
+export const ProductTemplate = ({
   content,
   contentComponent,
   description,
@@ -17,10 +17,8 @@ export const AboutPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
 
-  const DescriptionStyle = styled.p`
- 
-  color:red; 
-`
+  const DescriptionStyle = styled.p` 
+  color:red; `
 
 const H1Styled = styled.h1`
 color:green !important;
@@ -55,7 +53,7 @@ color:green !important;
   )
 }
 
-AboutPostTemplate.propTypes = {
+ProductTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -63,12 +61,12 @@ AboutPostTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const AboutPost = ({ data }) => {
+const ProductData = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <AboutPostTemplate
+      <ProductTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -88,16 +86,16 @@ const AboutPost = ({ data }) => {
   )
 }
 
-AboutPost.propTypes = {
+ProductData.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default AboutPost
+export default ProductData
 
 export const pageQuery = graphql`
-  query AboutPostByID($id: String!) {
+  query ProductDataByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
