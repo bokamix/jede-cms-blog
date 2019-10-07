@@ -84,7 +84,7 @@ export default () => (
                 slug
               }
               frontmatter {
-                title
+                title               
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
