@@ -33,9 +33,9 @@ color:green !important;
             <H1Styled className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </H1Styled>
-           <img src={gallery.img1}></img>
-           <img src={gallery.img2}></img>
-           <img src={gallery.img3}></img>
+           <img src={gallery.img1} alt="asd"></img>
+           <img src={gallery.img2} alt="asd"></img>
+           <img src={gallery.img3} alt="asd"></img>
             <DescriptionStyle>{description}</DescriptionStyle>
             <PostContent content={content} />
             {tags && tags.length ? (
