@@ -34,6 +34,10 @@ color:green !important;
               {title}
             </H1Styled>
         
+          {gallery &&
+          gallery.map(({ photo, name}) => (
+               <img src={photo} alt={name}/>
+          ))}
             <DescriptionStyle>{description}</DescriptionStyle>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -71,7 +75,7 @@ const ProductData = ({ data }) => {
       <ProductTemplate
         content={post.html}
         contentComponent={HTMLContent}
-      
+        gallery={post.frontmatter.gallery}
         description={post.frontmatter.description}
         helmet={
           <Helmet titleTemplate="%s | Blog">
@@ -106,7 +110,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        
+        gallery {
+          photo
+          name
+          position
+        }        
         tags
       }
     }
