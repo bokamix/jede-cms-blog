@@ -32,11 +32,10 @@ color:green !important;
           <div className="column is-10 is-offset-1">
             <H1Styled className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
-            </H1Styled>
-        
+            </H1Styled>       
           {gallery &&
-          gallery.map(({ photo, name}) => (
-               <img src={photo} alt={name}/>
+          gallery.map(({ galleryitem }) => (                             
+               <img key={galleryitem.alt} src={galleryitem.image} alt={galleryitem.alt} />  
           ))}
             <DescriptionStyle>{description}</DescriptionStyle>
             <PostContent content={content} />
@@ -110,7 +109,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-             
+        gallery {
+          galleryitem {
+            alt
+            image
+          }
+          name
+        }
         tags
       }
     }
